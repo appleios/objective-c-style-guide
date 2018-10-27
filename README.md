@@ -498,14 +498,19 @@ This allows for more consistency across files and greater visual clarity.
 **Preferred:**
 
 ```objc
-if (someObject) {}
-if (![anotherObject boolValue]) {}
+if (someObject != nil) {
+}
+if (otherObject == nil) {
+}
+if (![anotherObject boolValue]) {
+}
 ```
 
 **Not Preferred:**
 
 ```objc
-if (someObject == nil) {}
+if (otherObject) {}
+if (!someObject) {}
 if ([anotherObject boolValue] == NO) {}
 if (isAwesome == YES) {} // Never do this.
 if (isAwesome == true) {} // Never do this.
