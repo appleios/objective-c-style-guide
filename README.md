@@ -211,7 +211,7 @@ Properties should be camel-case with the leading word being lowercase. Use auto-
 **Preferred:**
 
 ```objc
-@property (strong, nonatomic) NSString *descriptiveVariableName;
+@property (nonatomic, strong) NSString *descriptiveVariableName;
 ```
 
 **Not Preferred:**
@@ -267,7 +267,7 @@ Direct access to instance variables that 'back' properties should be avoided exc
 ```objc
 @interface RWTTutorial : NSObject
 
-@property (strong, nonatomic) NSString *tutorialName;
+@property (nonatomic, strong) NSString *tutorialName;
 
 @end
 ```
@@ -288,14 +288,14 @@ Property attributes should be explicitly listed, and will help new programmers w
 **Preferred:**
 
 ```objc
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (strong, nonatomic) NSString *tutorialName;
+@property (nonatomic, weak) IBOutlet UIView *containerView;
+@property (nonatomic, strong) NSString *tutorialName;
 ```
 
 **Not Preferred:**
 
 ```objc
-@property (nonatomic, weak) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (nonatomic) NSString *tutorialName;
 ```
 
@@ -305,7 +305,7 @@ Why? Even if you declared a property as `NSString` somebody might pass in an ins
 **Preferred:**
 
 ```objc
-@property (copy, nonatomic) NSString *tutorialName;
+@property (nonatomic, copy) NSString *tutorialName;
 ```
 
 **Not Preferred:**
@@ -482,9 +482,9 @@ Private properties should be declared in class extensions (anonymous categories)
 ```objc
 @interface RWTDetailViewController ()
 
-@property (strong, nonatomic) GADBannerView *googleAdView;
-@property (strong, nonatomic) ADBannerView *iAdView;
-@property (strong, nonatomic) UIWebView *adXWebView;
+@property (nonatomic, strong) GADBannerView *googleAdView;
+@property (nonatomic, strong) ADBannerView *iAdView;
+@property (nonatomic, strong) UIWebView *adXWebView;
 
 @end
 ```
